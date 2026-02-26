@@ -1,0 +1,158 @@
+---
+---
+
+<!-- Full-screen menu overlay — clip-path curtain from top -->
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-[100] bg-[#1A1A1A] flex flex-col"
+  style="clip-path: inset(0 0 100% 0); visibility: hidden;"
+>
+  <!-- Nav links centered (offset by navbar height) -->
+  <nav class="flex-1 flex flex-col items-center justify-center gap-3 pt-[72px] max-[1024px]:pt-16">
+    <a
+      href="/"
+      class="menu-link font-outfit text-[64px] font-light text-[#FAFAF9] tracking-[-2px] leading-tight hover:opacity-50 transition-opacity max-[1024px]:text-[46px] max-[1024px]:tracking-[-1.2px]"
+    >Inicio</a>
+    <a
+      href="/proyectos"
+      class="menu-link font-outfit text-[64px] font-light text-[#FAFAF9] tracking-[-2px] leading-tight hover:opacity-50 transition-opacity max-[1024px]:text-[46px] max-[1024px]:tracking-[-1.2px]"
+    >Proyectos</a>
+    <a
+      href="/sobre-mi"
+      class="menu-link font-outfit text-[64px] font-light text-[#FAFAF9] tracking-[-2px] leading-tight hover:opacity-50 transition-opacity max-[1024px]:text-[46px] max-[1024px]:tracking-[-1.2px]"
+    >Sobre mí</a>
+    <a
+      href="/contacto"
+      class="menu-link font-outfit text-[64px] font-light text-[#FAFAF9] tracking-[-2px] leading-tight hover:opacity-50 transition-opacity max-[1024px]:text-[46px] max-[1024px]:tracking-[-1.2px]"
+    >Contacto</a>
+  </nav>
+
+  <!-- Bottom bar -->
+  <div class="w-full border-t border-[#2A2A2A]">
+    <div class="max-w-[1440px] mx-auto flex items-center justify-between h-[70px] px-[120px] max-[1024px]:px-6 max-[1024px]:h-16">
+      <div class="flex items-center gap-2">
+        <!-- X/Twitter -->
+        <a href="#" class="w-[30px] h-[30px] rounded-full bg-[#1D1D1D] border border-[#343434] flex items-center justify-center hover:border-[#555] transition-colors">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="#C7C7BF">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+        <!-- Instagram -->
+        <a href="#" class="w-[30px] h-[30px] rounded-full bg-[#1D1D1D] border border-[#343434] flex items-center justify-center hover:border-[#555] transition-colors">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C7C7BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="#C7C7BF" stroke="none"/>
+          </svg>
+        </a>
+        <!-- GitHub -->
+        <a href="#" class="w-[30px] h-[30px] rounded-full bg-[#1D1D1D] border border-[#343434] flex items-center justify-center hover:border-[#555] transition-colors">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C7C7BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="#" class="w-[30px] h-[30px] rounded-full bg-[#1D1D1D] border border-[#343434] flex items-center justify-center hover:border-[#555] transition-colors">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C7C7BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+      </div>
+      <span class="text-[#71716B] font-inter text-[13px] max-[1024px]:text-xs">hola@mateo.dev</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  import gsap from 'gsap';
+
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu  = document.getElementById('mobile-menu') as HTMLElement;
+  const menuLinks   = document.querySelectorAll('.menu-link');
+  const hamLine1    = document.getElementById('ham-line1') as HTMLElement | null;
+  const hamLine2    = document.getElementById('ham-line2') as HTMLElement | null;
+  const navbar      = document.getElementById('navbar')   as HTMLElement | null;
+  const navCta      = document.getElementById('nav-cta')  as HTMLElement | null;
+
+  // Snapshot original colors before any change
+  const navOriginalBg   = navbar   ? getComputedStyle(navbar).backgroundColor   : '';
+  const barOriginalBg   = hamLine1 ? getComputedStyle(hamLine1).backgroundColor : '';
+  const ctaOriginalBg   = navCta   ? getComputedStyle(navCta).backgroundColor   : '';
+  const ctaOriginalColor = navCta  ? getComputedStyle(navCta).color             : '';
+
+  let isOpen = false;
+
+  function openMenu() {
+    isOpen = true;
+
+    // Reset links BEFORE visibility:visible — while hidden, CSS transition-opacity
+    // has no visual effect, so links are guaranteed at opacity:0 when menu appears
+    gsap.killTweensOf(menuLinks);
+    gsap.set(menuLinks, { opacity: 0, y: -20 });
+
+    mobileMenu.style.visibility = 'visible';
+
+    // Navbar + bars + CTA snap to dark-menu colors instantly
+    gsap.set(navbar,   { backgroundColor: '#1A1A1A' });
+    gsap.set(hamLine1, { backgroundColor: '#FAFAF9' });
+    gsap.set(hamLine2, { backgroundColor: '#FAFAF9' });
+    gsap.set(navCta,   { backgroundColor: '#FAFAF9', color: '#1A1A1A' });
+
+    // Curtain drops from the very top (clip-path reveals top-first)
+    gsap.to(mobileMenu, {
+      clipPath: 'inset(0 0 0% 0)',
+      duration: 0.55,
+      ease: 'power3.out',
+    });
+
+    // First link pops in as curtain opens
+    gsap.to(menuLinks[0], { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out', delay: 0.15 });
+    // Then the rest stagger in after the first is visible
+    gsap.to(
+      Array.from(menuLinks).slice(1),
+      { opacity: 1, y: 0, stagger: 0.09, duration: 0.4, ease: 'power2.out', delay: 0.38 }
+    );
+
+    // Bars → X
+    gsap.to(hamLine1, { y: 4, rotate: 45, duration: 0.3, ease: 'power2.out' });
+    gsap.to(hamLine2, { y: -4, rotate: -45, duration: 0.3, ease: 'power2.out' });
+  }
+
+  function closeMenu() {
+    isOpen = false;
+
+    // X → Bars
+    gsap.to(hamLine1, { y: 0, rotate: 0, duration: 0.3, ease: 'power2.out' });
+    gsap.to(hamLine2, { y: 0, rotate: 0, duration: 0.3, ease: 'power2.out' });
+
+    // Navbar goes transparent so the menu clip is the ONLY thing driving
+    // the dark color — no separate navbar event, just one unified sweep
+    gsap.set(navbar, { backgroundColor: 'transparent' });
+
+    // Reverse clip: hides from bottom upward (mirror of the open)
+    gsap.to(mobileMenu, {
+      clipPath: 'inset(0 0 100% 0)',
+      duration: 0.4,
+      ease: 'power3.in',
+      onComplete: () => {
+        mobileMenu.style.visibility = 'hidden';
+        // Restore everything once fully off-screen
+        gsap.set(navbar,   { backgroundColor: navOriginalBg });
+        gsap.set(hamLine1, { backgroundColor: barOriginalBg });
+        gsap.set(hamLine2, { backgroundColor: barOriginalBg });
+        gsap.set(navCta,   { backgroundColor: ctaOriginalBg, color: ctaOriginalColor });
+      },
+    });
+  }
+
+  menuToggle?.addEventListener('click', () => {
+    if (!isOpen) openMenu();
+    else closeMenu();
+  });
+
+  menuLinks.forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+</script>

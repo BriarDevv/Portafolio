@@ -1,0 +1,47 @@
+---
+interface Props {
+  dark?: boolean;
+}
+const { dark = false } = Astro.props;
+---
+
+<header
+  id="navbar"
+  class:list={[
+    'fixed top-0 left-0 right-0 z-[101]',
+    dark ? 'bg-[#1A1A1A]' : 'bg-[#FAFAF9]',
+  ]}
+>
+  <div class="max-w-[1440px] mx-auto flex items-center justify-between h-[72px] px-[120px] max-[1024px]:px-6 max-[1024px]:h-16">
+    <!-- Hamburger button -->
+    <button
+      id="menu-toggle"
+      aria-label="Abrir menú"
+      class="flex flex-col justify-center items-center w-12 h-11 gap-[6px]"
+    >
+      <span
+        id="ham-line1"
+        class:list={[
+          'block w-5 h-[2px] rounded-full',
+          dark ? 'bg-[#FAFAF9]' : 'bg-[#1A1A1A]',
+        ]}
+      ></span>
+      <span
+        id="ham-line2"
+        class:list={[
+          'block w-5 h-[2px] rounded-full',
+          dark ? 'bg-[#FAFAF9]' : 'bg-[#1A1A1A]',
+        ]}
+      ></span>
+    </button>
+
+    <!-- CTA -->
+    <a
+      id="nav-cta"
+      href="/contacto"
+      class="flex items-center justify-center h-[38px] px-6 bg-[#1A1A1A] text-[#FAFAF9] text-[13px] font-medium font-inter rounded-full hover:opacity-80 transition-opacity"
+    >
+      Hablemos
+    </a>
+  </div>
+</header>
