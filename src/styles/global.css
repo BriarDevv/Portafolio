@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --font-outfit: "Outfit", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #FAFAF9;
+  font-family: "Inter", sans-serif;
+}
+
+/* Hide scrollbar on menu */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Smooth underline hover */
+.nav-hover {
+  position: relative;
+}
+.nav-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+.nav-hover:hover::after {
+  width: 100%;
+}
+
+/* GSAP initial states */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+}
