@@ -1,0 +1,178 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import MobileMenu from '../components/MobileMenu.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Proyectos — Briar.dev">
+  <MobileMenu />
+  <Navbar />
+
+  <!-- ─── PROJECTS HERO ─── -->
+  <section class="bg-[#FAFAF9] w-full">
+  <div class="max-w-[1440px] mx-auto pt-[88px] pb-[72px] px-[120px] max-[1024px]:px-6 max-[640px]:pt-16 max-[640px]:pb-10">
+    <div class="flex flex-col items-center gap-6 text-center mt-0 max-[640px]:gap-[14px]">
+      <span class="font-inter text-[13px] font-medium text-[#AEAEA6] tracking-[2px] max-[640px]:text-[11px] max-[640px]:tracking-[1.5px]">Proyectos</span>
+      <h1
+        id="page-title"
+        class="font-outfit text-[72px] font-light text-[#1A1A1A] tracking-[-3px] leading-tight max-[1024px]:text-[56px] max-[640px]:text-[44px] max-[640px]:tracking-[-1.6px]"
+      >
+        Mis proyectos
+      </h1>
+      <p class="font-inter text-lg text-[#8A8A82] font-normal leading-[1.6] max-w-[900px] text-center max-[640px]:text-[15px] max-[640px]:max-w-[310px]">
+        Proyectos que diseñé y desarrollé de punta a punta.
+      </p>
+    </div>
+  </div></section>
+
+  <!-- ─── PROJECTS GRID ─── -->
+  <section class="bg-[#FAFAF9] w-full">
+  <div class="max-w-[1440px] mx-auto pt-12 pb-20 px-[120px] max-[1024px]:px-6 max-[640px]:pt-0 max-[640px]:pb-14">
+    <div class="grid grid-cols-2 gap-6 reveal max-[900px]:grid-cols-1">
+
+      <!-- Project Card 1 -->
+      <div class="bg-[#F3F1EB] rounded-[20px] p-3 border border-[#E8E5E0] flex flex-col gap-2 group hover:-translate-y-1 transition-transform duration-300">
+        <div class="rounded-[14px] overflow-hidden border border-[#E8E5E0] bg-[#F0EDE7] h-[336px] relative max-[640px]:h-auto max-[640px]:min-h-[220px]">
+          <img
+            src="/images/bystellabotella.com.png"
+            alt="Bystellabotella website"
+            class="w-full h-full object-cover"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <!-- Fallback mockup -->
+          <div class="absolute inset-0 flex-col" style="display:none">
+            <div class="flex items-center gap-1.5 px-3 py-2.5 bg-[#E8E5DF] border-b border-[#E0DDD8]">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#E0DDD8]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#E0DDD8]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#E0DDD8]"></span>
+              <div class="flex-1 h-5 bg-[#E8E5DF] rounded mx-2 border border-[#E0DDD8] flex items-center px-2">
+                <span class="font-inter text-[10px] text-[#AEAEA6]">bystellabotella.com</span>
+              </div>
+            </div>
+            <div class="flex-1 p-6 flex flex-col gap-3">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-7 h-7 rounded-full bg-[#E0DDD8]"></div>
+                <span class="font-inter text-xs text-[#AEAEA6]">Bystellabotella</span>
+              </div>
+              <p class="font-outfit text-3xl font-light text-[#71716B]">Hola, soy <span class="italic font-bold text-[#1A1A1A]">Stella</span></p>
+              <p class="font-inter text-xs text-[#AEAEA6] max-w-[200px] leading-relaxed">Diseñadora y creadora de contenido apasionada por la moda y el estilo.</p>
+              <div class="flex gap-2 mt-1">
+                <div class="h-8 w-24 bg-[#1A1A1A] rounded-full flex items-center justify-center">
+                  <span class="font-inter text-[11px] text-white">Ver más</span>
+                </div>
+                <div class="h-8 w-20 bg-transparent rounded-full border border-[#D6D3CE] flex items-center justify-center">
+                  <span class="font-inter text-[11px] text-[#1A1A1A]">Contacto</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-[#FAFAF9] rounded-[16px] p-4 border border-[#E8E5E0] flex flex-col gap-[10px]">
+          <div class="flex items-center justify-between">
+            <span class="font-outfit text-[22px] font-semibold text-[#1A1A1A] tracking-[-0.5px]">Bystellabotella</span>
+            <a href="https://bystellabotella.com" target="_blank" rel="noopener" class="w-[30px] h-[30px] rounded-full bg-[#1A1A1A] flex items-center justify-center shrink-0 hover:scale-110 transition-transform">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FAFAF9" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+          <div class="flex flex-col gap-2">
+            <span class="font-inter text-sm text-[#AEAEA6]">Diseño Web · Branding · 2025</span>
+            <p class="font-inter text-xs text-[#71716B] leading-[1.5]">Diseño y desarrollo de la web para Bystellabotella. Identidad visual, experiencia de usuario y código limpio.</p>
+          </div>
+          <div class="flex flex-wrap gap-[6px]">
+            {['Astro', 'Vue', 'TypeScript', 'Pencil', 'Tailwind'].map((tag) => (
+              <span class="font-inter text-[10px] font-semibold text-[#8A8A82] bg-white border border-[#E0DDD8] rounded-full px-[10px] py-1">{tag}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Coming Soon Card -->
+      <div class="bg-[#F3F1EB] rounded-[20px] p-3 border border-[#E8E5E0] flex flex-col gap-2">
+        <div class="bg-[#FAFAF9] rounded-[14px] border border-[#E8E5E0] h-[336px] flex flex-col items-center justify-center gap-[14px] max-[640px]:h-[200px]">
+          <div class="w-14 h-14 rounded-full bg-[#F5F4F0] border border-[#E8E5E0] flex items-center justify-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A8A82" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span class="font-inter text-xs font-medium text-[#AEAEA6] tracking-[1.2px]">Disponible</span>
+        </div>
+        <div class="bg-[#FAFAF9] rounded-[16px] p-4 border border-[#E8E5E0] flex flex-col gap-2 flex-1">
+          <div class="flex items-center justify-between">
+            <span class="font-outfit text-[22px] font-semibold text-[#1A1A1A] tracking-[-0.4px]">Tu proyecto puede estar acá</span>
+            <a href="/contacto" class="w-[30px] h-[30px] rounded-full bg-[#1A1A1A] flex items-center justify-center shrink-0 hover:scale-110 transition-transform">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FAFAF9" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+          <span class="font-inter text-xs text-[#AEAEA6]">Web · UX/UI · Desarrollo</span>
+          <p class="font-inter text-[11px] text-[#71716B] leading-[1.45]">Proyectos digitales con foco en conversión, performance y claridad, listos para crecer con una base sólida.</p>
+          <div class="flex gap-[6px] mt-2">
+            <span class="font-inter text-[10px] font-semibold text-[#8A8A82] bg-white border border-[#E0DDD8] rounded-full px-[10px] py-1">Disponible</span>
+            <span class="font-inter text-[10px] font-semibold text-[#8A8A82] bg-white border border-[#E0DDD8] rounded-full px-[10px] py-1">Web</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- ─── END CTA (dark) ─── -->
+  <section class="bg-[#1A1A1A] w-full border-t border-[#2A2A2A] reveal">
+  <div class="max-w-[1440px] mx-auto px-[120px] py-[72px] max-[1024px]:px-6 max-[640px]:py-14">
+    <div class="flex items-end justify-between max-[900px]:flex-col max-[900px]:items-start max-[900px]:gap-8">
+      <div class="flex flex-col gap-[14px] max-w-[760px] max-[640px]:gap-4">
+        <span class="font-inter text-[13px] font-medium text-[#71716B] tracking-[2px]">SIGUIENTE PASO</span>
+        <h2 class="font-outfit text-[46px] font-light text-[#FAFAF9] tracking-[-1.6px] leading-[1.15] max-[640px]:text-[28px] max-[640px]:tracking-[-0.6px]">
+          ¿Tenés un proyecto en mente?
+        </h2>
+        <p class="font-inter text-[17px] text-[#A6A6A0] leading-[1.6] max-[640px]:text-base">
+          Contame la idea y lo vemos juntos. Te respondo en menos de 24 hs.
+        </p>
+      </div>
+      <a
+        href="/contacto"
+        class="flex items-center gap-[10px] bg-[#FAFAF9] text-[#1A1A1A] font-inter text-[15px] font-medium px-7 py-[14px] rounded-full hover:opacity-80 transition-opacity shrink-0 max-[640px]:w-full max-[640px]:justify-center"
+      >
+        Contactame
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+  </div></section>
+
+  <Footer />
+</Layout>
+
+<script>
+  import gsap from 'gsap';
+  import ScrollTrigger from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(
+    '#page-title',
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.3 }
+  );
+
+  gsap.utils.toArray<HTMLElement>('.reveal').forEach((el) => {
+    gsap.fromTo(
+      el,
+      { opacity: 0, y: 32 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+          once: true,
+        },
+      }
+    );
+  });
+</script>

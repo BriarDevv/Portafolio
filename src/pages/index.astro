@@ -1,0 +1,367 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import MobileMenu from '../components/MobileMenu.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Briar.dev — Diseñador & Desarrollador Full Stack">
+  <MobileMenu />
+  <Navbar />
+
+  <!-- ─── HERO ─── -->
+  <section class="relative min-h-screen bg-[#FAFAF9] overflow-hidden max-w-[1440px] mx-auto">
+    <!-- Decorative grid lines -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <!-- Vertical lines -->
+      <div class="absolute top-[72px] bottom-[70px] left-[33.33%] w-px bg-[#E0DDD8] opacity-30"></div>
+      <div class="absolute top-[72px] bottom-[70px] left-[50%] w-px bg-[#E0DDD8] opacity-30"></div>
+      <div class="absolute top-[72px] bottom-[70px] left-[66.66%] w-px bg-[#E0DDD8] opacity-30"></div>
+      <!-- Horizontal lines -->
+      <div class="absolute top-[33.33%] left-0 right-0 h-px bg-[#E0DDD8] opacity-20"></div>
+      <div class="absolute top-[66.66%] left-0 right-0 h-px bg-[#E0DDD8] opacity-20"></div>
+      <!-- Intersection dots -->
+      <div class="absolute w-1 h-1 rounded-full bg-[#D6D3CE] opacity-50" style="top: calc(33.33% - 2px); left: calc(33.33% - 2px)"></div>
+      <div class="absolute w-1 h-1 rounded-full bg-[#D6D3CE] opacity-50" style="top: calc(33.33% - 2px); left: calc(50% - 2px)"></div>
+      <div class="absolute w-1 h-1 rounded-full bg-[#D6D3CE] opacity-50" style="top: calc(33.33% - 2px); left: calc(66.66% - 2px)"></div>
+      <div class="absolute w-1 h-1 rounded-full bg-[#D6D3CE] opacity-50" style="top: calc(66.66% - 2px); left: calc(33.33% - 2px)"></div>
+      <div class="absolute w-1 h-1 rounded-full bg-[#D6D3CE] opacity-50" style="top: calc(66.66% - 2px); left: calc(50% - 2px)"></div>
+      <div class="absolute w-1 h-1 rounded-full bg-[#D6D3CE] opacity-50" style="top: calc(66.66% - 2px); left: calc(66.66% - 2px)"></div>
+    </div>
+
+    <!-- Hero content -->
+    <div class="flex items-center justify-center min-h-screen pt-[72px] pb-[70px] max-[1024px]:pt-16 max-[1024px]:pb-[96px]">
+      <div class="flex flex-col items-center gap-8 text-center px-6">
+        <!-- Title block -->
+        <div class="flex flex-col items-center" id="hero-title">
+          <h1 class="hero-line font-outfit text-[80px] font-light text-[#1A1A1A] tracking-[-3px] leading-[1.05] max-[1024px]:text-[44px] max-[1024px]:tracking-[-1.6px] max-[640px]:text-[36px] max-[640px]:tracking-[-1.2px]">
+            Diseño interfaces,
+          </h1>
+          <h1 class="hero-line font-outfit text-[80px] font-light text-[#1A1A1A] tracking-[-3px] leading-[1.05] max-[1024px]:text-[44px] max-[1024px]:tracking-[-1.6px] max-[640px]:text-[36px] max-[640px]:tracking-[-1.2px]">
+            desarrollo productos,
+          </h1>
+          <h1 class="hero-line font-outfit text-[80px] font-extrabold italic text-[#1A1A1A] tracking-[-3px] leading-[1.05] max-[1024px]:text-[44px] max-[1024px]:tracking-[-1.6px] max-[640px]:text-[36px] max-[640px]:tracking-[-1.2px]">
+            creo experiencias.
+          </h1>
+        </div>
+
+        <!-- Subtitle -->
+        <p
+          id="hero-sub"
+          class="font-inter text-lg text-[#8A8A82] font-normal leading-[1.6] max-w-[520px] text-center max-[640px]:text-[15px] max-[640px]:max-w-[310px]"
+        >
+          Diseñador y desarrollador full stack. Llevo ideas simples a webs completas, sin perder simpleza.
+        </p>
+
+        <!-- CTA buttons -->
+        <div id="hero-ctas" class="flex items-center gap-4 max-[640px]:flex-col max-[640px]:w-[342px]">
+          <a
+            href="/proyectos"
+            class="flex items-center gap-[10px] bg-[#1A1A1A] text-[#FAFAF9] font-inter text-[15px] font-medium px-9 py-4 rounded-full hover:opacity-80 transition-opacity max-[640px]:w-full max-[640px]:justify-center max-[640px]:py-[14px] max-[640px]:px-6"
+          >
+            Ver mi trabajo
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+          <a
+            href="/sobre-mi"
+            class="flex items-center gap-[10px] font-inter text-[15px] font-medium text-[#1A1A1A] px-9 py-4 rounded-full border border-[#D6D3CE] hover:border-[#1A1A1A] transition-colors max-[640px]:w-full max-[640px]:justify-center max-[640px]:py-[14px] max-[640px]:px-6"
+          >
+            Sobre mí
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom strip -->
+    <div class="absolute bottom-0 left-0 right-0 h-[70px] border-t border-[#E8E5E0] flex items-center justify-between px-[120px] max-[1024px]:px-6 max-[1024px]:h-[96px] max-[1024px]:flex-col max-[1024px]:justify-center max-[1024px]:gap-2">
+      <div class="flex items-center gap-[10px]">
+        <span class="font-inter text-xs font-medium text-[#AEAEA6] tracking-[2px] max-[640px]:text-[10px] max-[640px]:tracking-[1.4px]">DISPONIBLE</span>
+        <span class="font-inter text-xs text-[#71716B] max-[640px]:hidden">Abierto a proyectos y colaboraciones</span>
+        <span class="font-inter text-xs text-[#71716B] hidden max-[640px]:inline">Proyectos y colaboraciones</span>
+      </div>
+      <span class="font-inter text-[11px] text-[#71716B] max-[640px]:text-[10px]">Buenos Aires, Argentina</span>
+    </div>
+  </section>
+
+  <!-- ─── WORK SECTION ─── -->
+  <section class="bg-[#FAFAF9] w-full">
+  <div class="max-w-[1440px] mx-auto px-[120px] pt-20 pb-20 max-[1024px]:px-6 max-[1024px]:pt-14 max-[1024px]:pb-14">
+    <!-- Section header -->
+    <div class="flex items-end justify-between mb-16 reveal max-[640px]:flex-col max-[640px]:items-start max-[640px]:gap-4 max-[640px]:mb-8">
+      <div class="flex flex-col gap-4 max-[640px]:gap-3">
+        <span class="font-inter text-[13px] font-medium text-[#AEAEA6] tracking-[2px]">Proyectos</span>
+        <h2 class="font-outfit text-[52px] font-light text-[#1A1A1A] tracking-[-2px] leading-tight max-[640px]:text-[36px] max-[640px]:tracking-[-1.2px]">
+          Proyectos destacados
+        </h2>
+      </div>
+      <a
+        href="/proyectos"
+        class="flex items-center gap-2 font-inter text-[13px] font-medium text-[#1A1A1A] px-6 py-3 rounded-full border border-[#E0DDD8] hover:border-[#1A1A1A] transition-colors shrink-0"
+      >
+        Ver todos
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Projects grid -->
+    <div class="grid grid-cols-2 gap-6 reveal max-[900px]:grid-cols-1">
+
+      <!-- Project Card 1: Bystellabotella -->
+      <div class="bg-[#F3F1EB] rounded-[20px] p-3 border border-[#E8E5E0] flex flex-col gap-2 group hover:-translate-y-1 transition-transform duration-300">
+        <!-- Project image -->
+        <div class="rounded-[14px] overflow-hidden border border-[#E8E5E0] bg-[#F0EDE7] h-[336px] max-[640px]:h-[232px] relative">
+          <img
+            src="/images/bystellabotella.com.png"
+            alt="Bystellabotella website"
+            class="w-full h-full object-cover"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <!-- Fallback mockup -->
+          <div class="absolute inset-0 flex-col" style="display:none">
+            <div class="flex items-center gap-1.5 px-3 py-2.5 bg-[#E8E5DF] border-b border-[#E0DDD8]">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#E0DDD8]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#E0DDD8]"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-[#E0DDD8]"></span>
+              <div class="flex-1 h-5 bg-[#E8E5DF] rounded mx-2 border border-[#E0DDD8]"></div>
+            </div>
+            <div class="flex-1 p-6 flex flex-col gap-3">
+              <p class="font-outfit text-2xl font-light text-[#71716B]">Hola, soy <span class="italic font-bold text-[#1A1A1A]">Stella</span></p>
+              <p class="font-inter text-xs text-[#AEAEA6] max-w-[200px] leading-relaxed">Diseñadora y creadora de contenido apasionada por la moda y el estilo.</p>
+              <div class="flex gap-2 mt-1">
+                <div class="h-7 w-20 bg-[#1A1A1A] rounded-full"></div>
+                <div class="h-7 w-16 bg-[#E8E5E0] rounded-full border border-[#D6D3CE]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project info -->
+        <div class="bg-[#FAFAF9] rounded-[16px] p-4 border border-[#E8E5E0] flex flex-col gap-[10px]">
+          <div class="flex items-center justify-between">
+            <span class="font-outfit text-[22px] font-semibold text-[#1A1A1A] tracking-[-0.5px]">Bystellabotella</span>
+            <a
+              href="https://bystellabotella.com"
+              target="_blank"
+              rel="noopener"
+              class="w-[30px] h-[30px] rounded-full bg-[#1A1A1A] flex items-center justify-center shrink-0 hover:scale-110 transition-transform"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FAFAF9" stroke-width="2" stroke-linecap="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </div>
+          <div class="flex flex-col gap-2">
+            <span class="font-inter text-sm text-[#AEAEA6]">Diseño Web · Branding · 2025</span>
+            <p class="font-inter text-xs text-[#71716B] leading-[1.5]">
+              Diseño y desarrollo de la web para Bystellabotella. Identidad visual, experiencia de usuario y código limpio.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-[6px] max-[640px]:gap-1">
+            {['Astro', 'Vue', 'TypeScript', 'Pencil', 'Tailwind'].map((tag) => (
+              <span class="font-inter text-[10px] font-semibold text-[#8A8A82] bg-white border border-[#E0DDD8] rounded-full px-[10px] py-1 max-[640px]:px-2">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Coming Soon Card -->
+      <div class="bg-[#F3F1EB] rounded-[20px] p-3 border border-[#E8E5E0] flex flex-col gap-2">
+        <!-- Visual placeholder -->
+        <div class="bg-[#FAFAF9] rounded-[14px] border border-[#E8E5E0] h-[336px] max-[640px]:h-[232px] flex flex-col items-center justify-center gap-[14px]">
+          <div class="w-14 h-14 rounded-full bg-[#F5F4F0] border border-[#E8E5E0] flex items-center justify-center">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A8A82" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span class="font-inter text-xs font-medium text-[#AEAEA6] tracking-[1.2px]">Disponible</span>
+        </div>
+
+        <!-- Card info -->
+        <div class="bg-[#FAFAF9] rounded-[16px] p-4 border border-[#E8E5E0] flex flex-col gap-2 flex-1">
+          <div class="flex items-center justify-between">
+            <span class="font-outfit text-[22px] font-semibold text-[#1A1A1A] tracking-[-0.4px]">Tu proyecto puede estar acá</span>
+            <a
+              href="/contacto"
+              class="w-[30px] h-[30px] rounded-full bg-[#1A1A1A] flex items-center justify-center shrink-0 hover:scale-110 transition-transform"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FAFAF9" stroke-width="2" stroke-linecap="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </div>
+          <span class="font-inter text-xs text-[#AEAEA6]">Web · UX/UI · Desarrollo</span>
+          <p class="font-inter text-[11px] text-[#71716B] leading-[1.45]">
+            Proyectos digitales con foco en conversión, performance y claridad, listos para crecer con una base sólida.
+          </p>
+          <div class="flex gap-[6px] max-[640px]:gap-1 mt-auto">
+            <span class="font-inter text-[10px] font-semibold text-[#8A8A82] bg-white border border-[#E0DDD8] rounded-full px-[10px] py-1 max-[640px]:px-2">Disponible</span>
+            <span class="font-inter text-[10px] font-semibold text-[#8A8A82] bg-white border border-[#E0DDD8] rounded-full px-[10px] py-1 max-[640px]:px-2">Web</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- ─── CONTACT SECTION (dark) ─── -->
+  <section class="bg-[#1A1A1A] w-full reveal">
+  <div class="max-w-[1440px] mx-auto px-[120px] py-[120px] max-[1024px]:px-6 max-[1024px]:py-14">
+    <div class="flex flex-col items-center gap-5 mb-8">
+      <span class="font-inter text-[13px] font-medium text-[#71716B] tracking-[2px]">Contacto</span>
+      <h2 class="font-outfit text-[56px] font-light text-[#FAFAF9] tracking-[-2px] leading-[1.15] text-center max-w-[700px] max-[640px]:text-[40px] max-[640px]:tracking-[-1.4px]">
+        Construyamos algo<br />juntos.
+      </h2>
+      <p class="font-inter text-base text-[#71716B] leading-[1.6] text-center max-w-[500px] max-[640px]:text-[15px] max-[640px]:max-w-[310px]">
+        ¿Tenés un proyecto en mente? Me encantaría escucharlo.<br />
+        Mandame un mensaje y te respondo en menos de 24 horas.
+      </p>
+    </div>
+
+    <!-- Contact form + info -->
+    <div class="flex flex-col items-center gap-8 max-w-[860px] mx-auto">
+      <!-- Form (dark) -->
+      <div class="bg-[#202020] border border-[#2E2E2E] rounded-[16px] p-6 w-full flex flex-col gap-6">
+        <div class="grid grid-cols-2 gap-6 max-[640px]:grid-cols-1">
+          <div class="flex flex-col gap-2">
+            <label class="font-inter text-[13px] font-medium text-[#71716B]">Nombre</label>
+            <div class="bg-[#252525] rounded-[10px] h-12 px-4 flex items-center">
+              <input type="text" placeholder="Tu nombre" class="bg-transparent w-full font-inter text-sm text-[#FAFAF9] placeholder-[#4A4A48] outline-none" />
+            </div>
+          </div>
+          <div class="flex flex-col gap-2">
+            <label class="font-inter text-[13px] font-medium text-[#71716B]">Correo electrónico</label>
+            <div class="bg-[#252525] rounded-[10px] h-12 px-4 flex items-center">
+              <input type="email" placeholder="tu@correo.com" class="bg-transparent w-full font-inter text-sm text-[#FAFAF9] placeholder-[#4A4A48] outline-none" />
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label class="font-inter text-[13px] font-medium text-[#71716B]">¿Qué necesitás?</label>
+          <div class="bg-[#252525] rounded-[10px] h-12 px-4 flex items-center justify-between">
+            <span class="font-inter text-sm text-[#71716B]">Seleccioná una opción</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#71716B" stroke-width="2" stroke-linecap="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label class="font-inter text-[13px] font-medium text-[#71716B]">Detalles del proyecto</label>
+          <div class="bg-[#252525] rounded-[10px] h-[140px] p-4">
+            <textarea placeholder="Cuéntame sobre tu proyecto..." class="bg-transparent w-full h-full font-inter text-sm text-[#FAFAF9] placeholder-[#4A4A48] outline-none resize-none"></textarea>
+          </div>
+        </div>
+
+        <button class="w-full bg-[#FAFAF9] text-[#1A1A1A] font-inter text-[15px] font-medium h-[52px] rounded-[12px] flex items-center justify-center gap-[10px] hover:opacity-80 transition-opacity">
+          Enviar mensaje
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Contact info -->
+      <div class="grid grid-cols-4 gap-5 w-full border-t border-[#2E2E2E] pt-5 max-[900px]:grid-cols-2 max-[640px]:grid-cols-1">
+        <div class="flex flex-col gap-[10px]">
+          <span class="font-outfit text-base font-semibold text-[#FAFAF9] tracking-[-0.3px]">Escribime</span>
+          <span class="font-inter text-[15px] text-[#71716B]">hola@mateo.dev</span>
+        </div>
+        <div class="flex flex-col gap-[10px]">
+          <span class="font-outfit text-base font-semibold text-[#FAFAF9] tracking-[-0.3px]">Llamame</span>
+          <span class="font-inter text-[15px] text-[#71716B]">+11 5839 9708</span>
+        </div>
+        <div class="flex flex-col gap-[10px]">
+          <span class="font-outfit text-base font-semibold text-[#FAFAF9] tracking-[-0.3px]">Encontrame en</span>
+          <span class="font-inter text-[15px] text-[#71716B] leading-[1.6]">Buenos Aires, Argentina<br />Disponible en remoto globalmente</span>
+        </div>
+        <div class="flex flex-col gap-[14px]">
+          <span class="font-outfit text-base font-semibold text-[#FAFAF9] tracking-[-0.3px]">Seguime</span>
+          <div class="flex gap-2">
+            {[
+              { label: 'X', path: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z', filled: true },
+            ].map(() => null)}
+            <a href="#" class="w-[30px] h-[30px] rounded-full bg-[#1D1D1D] border border-[#343434] flex items-center justify-center hover:border-[#555] transition-colors">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="#C7C7BF"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="w-[30px] h-[30px] rounded-full bg-[#1D1D1D] border border-[#343434] flex items-center justify-center hover:border-[#555] transition-colors">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C7C7BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="w-[30px] h-[30px] rounded-full bg-[#1D1D1D] border border-[#343434] flex items-center justify-center hover:border-[#555] transition-colors">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C7C7BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#C7C7BF" stroke="none"/></svg>
+            </a>
+            <a href="#" class="w-[30px] h-[30px] rounded-full bg-[#1D1D1D] border border-[#343434] flex items-center justify-center hover:border-[#555] transition-colors">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C7C7BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <Footer />
+</Layout>
+
+<script>
+  import gsap from 'gsap';
+  import ScrollTrigger from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Hero title reveal
+  gsap.fromTo(
+    '.hero-line',
+    { opacity: 0, y: 40 },
+    {
+      opacity: 1,
+      y: 0,
+      stagger: 0.12,
+      duration: 0.9,
+      ease: 'power3.out',
+      delay: 0.2,
+    }
+  );
+
+  gsap.fromTo(
+    '#hero-sub',
+    { opacity: 0, y: 24 },
+    { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out', delay: 0.65 }
+  );
+
+  gsap.fromTo(
+    '#hero-ctas',
+    { opacity: 0, y: 20 },
+    { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.85 }
+  );
+
+  // Scroll-triggered reveals
+  gsap.utils.toArray<HTMLElement>('.reveal').forEach((el) => {
+    gsap.fromTo(
+      el,
+      { opacity: 0, y: 32 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+          once: true,
+        },
+      }
+    );
+  });
+</script>
