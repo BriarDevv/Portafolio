@@ -12,18 +12,22 @@
     <a
       href="/"
       class="menu-link font-outfit text-[64px] font-light text-[#FAFAF9] tracking-[-2px] leading-tight hover:opacity-50 transition-opacity max-[1024px]:text-[46px] max-[1024px]:tracking-[-1.2px]"
+      style="opacity:0"
     >Inicio</a>
     <a
       href="/proyectos"
       class="menu-link font-outfit text-[64px] font-light text-[#FAFAF9] tracking-[-2px] leading-tight hover:opacity-50 transition-opacity max-[1024px]:text-[46px] max-[1024px]:tracking-[-1.2px]"
+      style="opacity:0"
     >Proyectos</a>
     <a
       href="/sobre-mi"
       class="menu-link font-outfit text-[64px] font-light text-[#FAFAF9] tracking-[-2px] leading-tight hover:opacity-50 transition-opacity max-[1024px]:text-[46px] max-[1024px]:tracking-[-1.2px]"
+      style="opacity:0"
     >Sobre mí</a>
     <a
       href="/contacto"
       class="menu-link font-outfit text-[64px] font-light text-[#FAFAF9] tracking-[-2px] leading-tight hover:opacity-50 transition-opacity max-[1024px]:text-[46px] max-[1024px]:tracking-[-1.2px]"
+      style="opacity:0"
     >Contacto</a>
   </nav>
 
@@ -87,11 +91,12 @@
   function openMenu() {
     isOpen = true;
 
-    // Reset links BEFORE visibility:visible — while hidden, CSS transition-opacity
-    // has no visual effect, so links are guaranteed at opacity:0 when menu appears
-    gsap.killTweensOf(menuLinks);
-    gsap.set(menuLinks, { opacity: 0, y: -20 });
+    // Deshabilitar transition-opacity ANTES de que GSAP anime —
+    // si no, el browser lanza una CSS transition de 150ms en cada frame de GSAP
+    // y en la primera apertura las links quedan invisibles
+    Array.from(menuLinks).forEach(l => (l as HTMLElement).style.transition = 'none');
 
+    gsap.killTweensOf([mobileMenu, ...Array.from(menuLinks)]);
     mobileMenu.style.visibility = 'visible';
 
     // Navbar + bars + CTA snap to dark-menu colors instantly
@@ -100,19 +105,24 @@
     gsap.set(hamLine2, { backgroundColor: '#FAFAF9' });
     gsap.set(navCta,   { backgroundColor: '#FAFAF9', color: '#1A1A1A' });
 
-    // Curtain drops from the very top (clip-path reveals top-first)
-    gsap.to(mobileMenu, {
-      clipPath: 'inset(0 0 0% 0)',
-      duration: 0.55,
-      ease: 'power3.out',
-    });
+    gsap.fromTo(mobileMenu,
+      { clipPath: 'inset(0 0 100% 0)' },
+      { clipPath: 'inset(0 0 0% 0)', duration: 0.55, ease: 'power3.out' }
+    );
 
-    // First link pops in as curtain opens
-    gsap.to(menuLinks[0], { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out', delay: 0.15 });
-    // Then the rest stagger in after the first is visible
-    gsap.to(
+    gsap.fromTo(menuLinks[0],
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out', delay: 0.15 }
+    );
+    gsap.fromTo(
       Array.from(menuLinks).slice(1),
-      { opacity: 1, y: 0, stagger: 0.09, duration: 0.4, ease: 'power2.out', delay: 0.38 }
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, stagger: 0.09, duration: 0.4, ease: 'power2.out', delay: 0.38,
+        onComplete: () => {
+          // Restaurar transition-opacity para el hover effect
+          Array.from(menuLinks).forEach(l => (l as HTMLElement).style.transition = '');
+        }
+      }
     );
 
     // Bars → X
