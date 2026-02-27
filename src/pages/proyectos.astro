@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import MobileMenu from '../components/MobileMenu.astro';
 import Footer from '../components/Footer.astro';
+import { ArrowRight, Layers } from '@lucide/astro';
 ---
 
 <Layout title="Proyectos — Briar.dev">
@@ -13,14 +14,15 @@ import Footer from '../components/Footer.astro';
   <section class="bg-[#FAFAF9] w-full">
   <div class="max-w-[1440px] mx-auto pt-[88px] pb-[72px] px-[120px] max-[1024px]:px-6 max-[640px]:pt-16 max-[640px]:pb-10">
     <div class="flex flex-col items-center gap-6 text-center mt-0 max-[640px]:gap-[14px]">
-      <span class="font-inter text-[13px] font-medium text-[#AEAEA6] tracking-[2px] max-[640px]:text-[11px] max-[640px]:tracking-[1.5px]">Proyectos</span>
+      <span class="hero-label font-inter text-[13px] font-medium text-[#AEAEA6] tracking-[2px] max-[640px]:text-[11px] max-[640px]:tracking-[1.5px]" style="opacity:0">Proyectos</span>
       <h1
         id="page-title"
         class="font-outfit text-[72px] font-light text-[#1A1A1A] tracking-[-3px] leading-tight max-[1024px]:text-[56px] max-[640px]:text-[44px] max-[640px]:tracking-[-1.6px]"
+        style="opacity:0"
       >
         Mis proyectos
       </h1>
-      <p class="font-inter text-lg text-[#8A8A82] font-normal leading-[1.6] max-w-[900px] text-center max-[640px]:text-[15px] max-[640px]:max-w-[310px]">
+      <p class="hero-subtitle font-inter text-lg text-[#8A8A82] font-normal leading-[1.6] max-w-[900px] text-center max-[640px]:text-[15px] max-[640px]:max-w-[310px]" style="opacity:0">
         Proyectos que diseñé y desarrollé de punta a punta.
       </p>
     </div>
@@ -29,10 +31,10 @@ import Footer from '../components/Footer.astro';
   <!-- ─── PROJECTS GRID ─── -->
   <section class="bg-[#FAFAF9] w-full">
   <div class="max-w-[1440px] mx-auto pt-12 pb-20 px-[120px] max-[1024px]:px-6 max-[640px]:pt-0 max-[640px]:pb-14">
-    <div class="grid grid-cols-2 gap-6 reveal max-[900px]:grid-cols-1">
+    <div class="grid grid-cols-2 gap-6 max-[900px]:grid-cols-1">
 
       <!-- Project Card 1 -->
-      <div class="bg-[#F3F1EB] rounded-[20px] p-3 border border-[#E8E5E0] flex flex-col gap-2 group hover:-translate-y-1 transition-transform duration-300">
+      <div class="project-card bg-[#F3F1EB] rounded-[20px] p-3 border border-[#E8E5E0] flex flex-col gap-2 group hover:-translate-y-1 transition-transform duration-300" style="opacity:0">
         <div class="rounded-[14px] overflow-hidden border border-[#E8E5E0] bg-[#F0EDE7] h-[336px] relative max-[640px]:h-auto max-[640px]:min-h-[220px]">
           <img
             src="/images/bystellabotella.com.png"
@@ -72,7 +74,7 @@ import Footer from '../components/Footer.astro';
           <div class="flex items-center justify-between">
             <span class="font-outfit text-[22px] font-semibold text-[#1A1A1A] tracking-[-0.5px]">Bystellabotella</span>
             <a href="https://bystellabotella.com" target="_blank" rel="noopener" class="w-[30px] h-[30px] rounded-full bg-[#1A1A1A] flex items-center justify-center shrink-0 hover:scale-110 transition-transform">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FAFAF9" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              <ArrowRight size={14} color="#FAFAF9" />
             </a>
           </div>
           <div class="flex flex-col gap-2">
@@ -88,14 +90,10 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <!-- Coming Soon Card -->
-      <div class="bg-[#F3F1EB] rounded-[20px] p-3 border border-[#E8E5E0] flex flex-col gap-2">
+      <div class="project-card bg-[#F3F1EB] rounded-[20px] p-3 border border-[#E8E5E0] flex flex-col gap-2" style="opacity:0">
         <div class="bg-[#FAFAF9] rounded-[14px] border border-[#E8E5E0] h-[336px] flex flex-col items-center justify-center gap-[14px] max-[640px]:h-[200px]">
           <div class="w-14 h-14 rounded-full bg-[#F5F4F0] border border-[#E8E5E0] flex items-center justify-center">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A8A82" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-              <path d="M2 17l10 5 10-5"/>
-              <path d="M2 12l10 5 10-5"/>
-            </svg>
+            <Layers size={22} color="#8A8A82" strokeWidth={1.5} />
           </div>
           <span class="font-inter text-xs font-medium text-[#AEAEA6] tracking-[1.2px]">Disponible</span>
         </div>
@@ -103,7 +101,7 @@ import Footer from '../components/Footer.astro';
           <div class="flex items-center justify-between">
             <span class="font-outfit text-[22px] font-semibold text-[#1A1A1A] tracking-[-0.4px]">Tu proyecto puede estar acá</span>
             <a href="/contacto" class="w-[30px] h-[30px] rounded-full bg-[#1A1A1A] flex items-center justify-center shrink-0 hover:scale-110 transition-transform">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FAFAF9" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              <ArrowRight size={14} color="#FAFAF9" />
             </a>
           </div>
           <span class="font-inter text-xs text-[#AEAEA6]">Web · UX/UI · Desarrollo</span>
@@ -135,10 +133,7 @@ import Footer from '../components/Footer.astro';
         class="flex items-center gap-[10px] bg-[#FAFAF9] text-[#1A1A1A] font-inter text-[15px] font-medium px-7 py-[14px] rounded-full hover:opacity-80 transition-opacity shrink-0 max-[640px]:w-full max-[640px]:justify-center"
       >
         Contactame
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <line x1="5" y1="12" x2="19" y2="12"/>
-          <polyline points="12 5 19 12 12 19"/>
-        </svg>
+        <ArrowRight size={16} />
       </a>
     </div>
   </div></section>
@@ -152,10 +147,16 @@ import Footer from '../components/Footer.astro';
 
   gsap.registerPlugin(ScrollTrigger);
 
+  // Hero stagger: label → title → subtitle
+  gsap.fromTo('.hero-label', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', delay: 0.2 });
+  gsap.fromTo('#page-title', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.38 });
+  gsap.fromTo('.hero-subtitle', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.58 });
+
+  // Cards en el fold — fade simple para evitar conflicto con transition-transform del hover
   gsap.fromTo(
-    '#page-title',
-    { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.3 }
+    '.project-card',
+    { opacity: 0 },
+    { opacity: 1, stagger: 0.14, duration: 0.6, ease: 'power2.out', delay: 0.75 }
   );
 
   gsap.utils.toArray<HTMLElement>('.reveal').forEach((el) => {

@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import MobileMenu from '../components/MobileMenu.astro';
 import Footer from '../components/Footer.astro';
+import { ArrowRight, ChevronDown, Layers, Instagram, Github, Linkedin } from '@lucide/astro';
 ---
 
 <Layout title="Briar.dev — Diseñador & Desarrollador Full Stack">
@@ -60,10 +61,7 @@ import Footer from '../components/Footer.astro';
             class="flex items-center gap-[10px] bg-[#1A1A1A] text-[#FAFAF9] font-inter text-[15px] font-medium px-9 py-4 rounded-full hover:opacity-80 transition-opacity max-[640px]:w-full max-[640px]:justify-center max-[640px]:py-[14px] max-[640px]:px-6"
           >
             Ver mi trabajo
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
+            <ArrowRight size={16} />
           </a>
           <a
             href="/sobre-mi"
@@ -76,7 +74,7 @@ import Footer from '../components/Footer.astro';
     </div>
 
     <!-- Bottom strip -->
-    <div class="absolute bottom-0 left-0 right-0 h-[70px] border-t border-[#E8E5E0] flex items-center justify-between px-[120px] max-[1024px]:px-6 max-[1024px]:h-[96px] max-[1024px]:flex-col max-[1024px]:justify-center max-[1024px]:gap-2">
+    <div id="hero-strip" style="opacity:0" class="absolute bottom-0 left-0 right-0 h-[70px] border-t border-[#E8E5E0] flex items-center justify-between px-[120px] max-[1024px]:px-6 max-[1024px]:h-[96px] max-[1024px]:flex-col max-[1024px]:justify-center max-[1024px]:gap-2">
       <div class="flex items-center gap-[10px]">
         <span class="font-inter text-xs font-medium text-[#AEAEA6] tracking-[2px] max-[640px]:text-[10px] max-[640px]:tracking-[1.4px]">DISPONIBLE</span>
         <span class="font-inter text-xs text-[#71716B] max-[640px]:hidden">Abierto a proyectos y colaboraciones</span>
@@ -102,10 +100,7 @@ import Footer from '../components/Footer.astro';
         class="flex items-center gap-2 font-inter text-[13px] font-medium text-[#1A1A1A] px-6 py-3 rounded-full border border-[#E0DDD8] hover:border-[#1A1A1A] transition-colors shrink-0"
       >
         Ver todos
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <line x1="5" y1="12" x2="19" y2="12"/>
-          <polyline points="12 5 19 12 12 19"/>
-        </svg>
+        <ArrowRight size={14} />
       </a>
     </div>
 
@@ -151,10 +146,7 @@ import Footer from '../components/Footer.astro';
               rel="noopener"
               class="w-[30px] h-[30px] rounded-full bg-[#1A1A1A] flex items-center justify-center shrink-0 hover:scale-110 transition-transform"
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FAFAF9" stroke-width="2" stroke-linecap="round">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
+              <ArrowRight size={14} color="#FAFAF9" />
             </a>
           </div>
           <div class="flex flex-col gap-2">
@@ -178,11 +170,7 @@ import Footer from '../components/Footer.astro';
         <!-- Visual placeholder -->
         <div class="bg-[#FAFAF9] rounded-[14px] border border-[#E8E5E0] h-[336px] max-[640px]:h-[232px] flex flex-col items-center justify-center gap-[14px]">
           <div class="w-14 h-14 rounded-full bg-[#F5F4F0] border border-[#E8E5E0] flex items-center justify-center">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8A8A82" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-              <path d="M2 17l10 5 10-5"/>
-              <path d="M2 12l10 5 10-5"/>
-            </svg>
+            <Layers size={22} color="#8A8A82" strokeWidth={1.5} />
           </div>
           <span class="font-inter text-xs font-medium text-[#AEAEA6] tracking-[1.2px]">Disponible</span>
         </div>
@@ -195,10 +183,7 @@ import Footer from '../components/Footer.astro';
               href="/contacto"
               class="w-[30px] h-[30px] rounded-full bg-[#1A1A1A] flex items-center justify-center shrink-0 hover:scale-110 transition-transform"
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FAFAF9" stroke-width="2" stroke-linecap="round">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
+              <ArrowRight size={14} color="#FAFAF9" />
             </a>
           </div>
           <span class="font-inter text-xs text-[#AEAEA6]">Web · UX/UI · Desarrollo</span>
@@ -251,9 +236,7 @@ import Footer from '../components/Footer.astro';
           <label class="font-inter text-[13px] font-medium text-[#71716B]">¿Qué necesitás?</label>
           <div class="bg-[#252525] rounded-[10px] h-12 px-4 flex items-center justify-between">
             <span class="font-inter text-sm text-[#71716B]">Seleccioná una opción</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#71716B" stroke-width="2" stroke-linecap="round">
-              <polyline points="6 9 12 15 18 9"/>
-            </svg>
+            <ChevronDown size={16} color="#71716B" />
           </div>
         </div>
 
@@ -266,10 +249,7 @@ import Footer from '../components/Footer.astro';
 
         <button class="w-full bg-[#FAFAF9] text-[#1A1A1A] font-inter text-[15px] font-medium h-[52px] rounded-[12px] flex items-center justify-center gap-[10px] hover:opacity-80 transition-opacity">
           Enviar mensaje
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
-          </svg>
+          <ArrowRight size={16} />
         </button>
       </div>
 
@@ -290,20 +270,18 @@ import Footer from '../components/Footer.astro';
         <div class="flex flex-col gap-[14px]">
           <span class="font-outfit text-base font-semibold text-[#FAFAF9] tracking-[-0.3px]">Seguime</span>
           <div class="flex gap-2">
-            {[
-              { label: 'X', path: 'M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z', filled: true },
-            ].map(() => null)}
+            <!-- X/Twitter — inline (removido de Lucide) -->
             <a href="#" class="w-[30px] h-[30px] rounded-full bg-[#1D1D1D] border border-[#343434] flex items-center justify-center hover:border-[#555] transition-colors">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="#C7C7BF"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
             <a href="#" class="w-[30px] h-[30px] rounded-full bg-[#1D1D1D] border border-[#343434] flex items-center justify-center hover:border-[#555] transition-colors">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C7C7BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <Linkedin size={13} color="#C7C7BF" />
             </a>
             <a href="#" class="w-[30px] h-[30px] rounded-full bg-[#1D1D1D] border border-[#343434] flex items-center justify-center hover:border-[#555] transition-colors">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C7C7BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#C7C7BF" stroke="none"/></svg>
+              <Instagram size={13} color="#C7C7BF" />
             </a>
             <a href="#" class="w-[30px] h-[30px] rounded-full bg-[#1D1D1D] border border-[#343434] flex items-center justify-center hover:border-[#555] transition-colors">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C7C7BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              <Github size={13} color="#C7C7BF" />
             </a>
           </div>
         </div>
@@ -344,6 +322,12 @@ import Footer from '../components/Footer.astro';
     '#hero-ctas',
     { opacity: 0, y: 20 },
     { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.85 }
+  );
+
+  gsap.fromTo(
+    '#hero-strip',
+    { opacity: 0, y: 10 },
+    { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 1.05 }
   );
 
   // Scroll-triggered reveals

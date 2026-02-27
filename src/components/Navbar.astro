@@ -7,9 +7,10 @@ const { dark = false } = Astro.props;
 
 <header
   id="navbar"
+  style="opacity:0"
   class:list={[
     'fixed top-0 left-0 right-0 z-[101]',
-    dark ? 'bg-[#1A1A1A]' : 'bg-[#FAFAF9]',
+    dark ? 'bg-[#1A1A1A]/95 backdrop-blur-md' : 'bg-[#FAFAF9]/95 backdrop-blur-md',
   ]}
 >
   <div class="max-w-[1440px] mx-auto flex items-center justify-between h-[72px] px-[120px] max-[1024px]:px-6 max-[1024px]:h-16">
@@ -45,3 +46,12 @@ const { dark = false } = Astro.props;
     </a>
   </div>
 </header>
+
+<script>
+  import gsap from 'gsap';
+  gsap.fromTo(
+    '#navbar',
+    { opacity: 0, y: -12 },
+    { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.05 }
+  );
+</script>

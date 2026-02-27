@@ -1,10 +1,11 @@
 ---
+import { Instagram, Github, Linkedin } from '@lucide/astro';
 ---
 
 <!-- Full-screen menu overlay — clip-path curtain from top -->
 <div
   id="mobile-menu"
-  class="fixed inset-0 z-[100] bg-[#1A1A1A] flex flex-col"
+  class="fixed inset-0 z-[100] bg-[#1A1A1A]/95 backdrop-blur-md flex flex-col"
   style="clip-path: inset(0 0 100% 0); visibility: hidden;"
 >
   <!-- Nav links centered (offset by navbar height) -->
@@ -43,25 +44,15 @@
         </a>
         <!-- Instagram -->
         <a href="#" class="w-[30px] h-[30px] rounded-full bg-[#1D1D1D] border border-[#343434] flex items-center justify-center hover:border-[#555] transition-colors">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C7C7BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.5" cy="6.5" r="1" fill="#C7C7BF" stroke="none"/>
-          </svg>
+          <Instagram size={13} color="#C7C7BF" />
         </a>
         <!-- GitHub -->
         <a href="#" class="w-[30px] h-[30px] rounded-full bg-[#1D1D1D] border border-[#343434] flex items-center justify-center hover:border-[#555] transition-colors">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C7C7BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-          </svg>
+          <Github size={13} color="#C7C7BF" />
         </a>
         <!-- LinkedIn -->
         <a href="#" class="w-[30px] h-[30px] rounded-full bg-[#1D1D1D] border border-[#343434] flex items-center justify-center hover:border-[#555] transition-colors">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C7C7BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-            <rect x="2" y="9" width="4" height="12"/>
-            <circle cx="4" cy="4" r="2"/>
-          </svg>
+          <Linkedin size={13} color="#C7C7BF" />
         </a>
       </div>
       <span class="text-[#71716B] font-inter text-[13px] max-[1024px]:text-xs">hola@mateo.dev</span>
@@ -100,7 +91,7 @@
     mobileMenu.style.visibility = 'visible';
 
     // Navbar + bars + CTA snap to dark-menu colors instantly
-    gsap.set(navbar,   { backgroundColor: '#1A1A1A' });
+    gsap.set(navbar,   { backgroundColor: 'transparent', backdropFilter: 'none' });
     gsap.set(hamLine1, { backgroundColor: '#FAFAF9' });
     gsap.set(hamLine2, { backgroundColor: '#FAFAF9' });
     gsap.set(navCta,   { backgroundColor: '#FAFAF9', color: '#1A1A1A' });

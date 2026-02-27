@@ -3,34 +3,25 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import MobileMenu from '../components/MobileMenu.astro';
 import Footer from '../components/Footer.astro';
-
-const stack = {
-  frontend: {
-    icon: 'code',
-    title: 'Frontend',
-    desc: 'Interfaces rápidas con arquitectura escalable.',
-    pills: [['Astro', 'React', 'Vue'], ['TypeScript', 'Tailwind', 'GSAP']],
-  },
-  backend: {
-    icon: 'database',
-    title: 'Backend & Tools',
-    desc: 'Servicios, datos y workflows para shipping continuo.',
-    pills: [['Node', 'PHP', 'MongoDB'], ['MySQL', 'Git', 'APIs']],
-  },
-  design: {
-    icon: 'pen-tool',
-    title: 'Design',
-    desc: 'Sistemas visuales prolijos y consistentes.',
-    pills: [['Pencil', 'Figma'], ['Photoshop', 'Illustrator']],
-  },
-};
+import {
+  MessageCircle, FileText, Pencil, CircleCheck, Rocket,
+  Layers, Package, Globe, Code2, Database, PenTool,
+  ArrowRight, Download,
+} from '@lucide/astro';
 
 const timeline = [
-  { num: '1', title: 'Conversación', desc: 'Hablamos de tu proyecto, objetivos y contexto. Entiendo qué necesitás y si encajamos.', tag: 'Call / Brief', icon: '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>' },
-  { num: '2', title: 'Propuesta', desc: 'Armo un scope claro con alcance, tiempos y precio. Sin letra chica ni sorpresas.', tag: 'Scope + Quote', icon: '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/>' },
-  { num: '3', title: 'Diseño + Dev', desc: 'Diseño la interfaz, validamos juntos y lo llevo a código. Avances visibles cada semana.', tag: 'Pencil + Code', icon: '<path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>' },
-  { num: '4', title: 'Review', desc: 'Revisamos todo en detalle: funcionalidad, responsive, edge cases. Ajustes finales antes de salir.', tag: 'QA + Feedback', icon: '<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>' },
-  { num: '5', title: 'Entrega', desc: 'Deploy a producción, documentación y handoff limpio. Listo para que lo mantengas o sigamos iterando.', tag: 'Deploy + Docs', icon: '<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09Z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2Z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>' },
+  { num: '1', title: 'Conversación', desc: 'Hablamos de tu proyecto, objetivos y contexto. Entiendo qué necesitás y si encajamos.', tag: 'Call / Brief', Icon: MessageCircle },
+  { num: '2', title: 'Propuesta', desc: 'Armo un scope claro con alcance, tiempos y precio. Sin letra chica ni sorpresas.', tag: 'Scope + Quote', Icon: FileText },
+  { num: '3', title: 'Diseño + Dev', desc: 'Diseño la interfaz, validamos juntos y lo llevo a código. Avances visibles cada semana.', tag: 'Pencil + Code', Icon: Pencil },
+  { num: '4', title: 'Review', desc: 'Revisamos todo en detalle: funcionalidad, responsive, edge cases. Ajustes finales antes de salir.', tag: 'QA + Feedback', Icon: CircleCheck },
+  { num: '5', title: 'Entrega', desc: 'Deploy a producción, documentación y handoff limpio. Listo para que lo mantengas o sigamos iterando.', tag: 'Deploy + Docs', Icon: Rocket },
+];
+
+const aboutTags = [
+  { Icon: Layers, label: 'Full Stack' },
+  { Icon: Pencil, label: 'UX / UI' },
+  { Icon: Package, label: 'Design Systems' },
+  { Icon: Globe, label: 'Español / Inglés' },
 ];
 ---
 
@@ -41,21 +32,22 @@ const timeline = [
   <!-- ─── ABOUT HERO ─── -->
   <section class="bg-[#FAFAF9] max-w-[1440px] mx-auto pt-[88px] pb-[72px] px-[120px] max-[1024px]:px-6 max-[640px]:px-6 max-[640px]:pt-16 max-[640px]:pb-10">
     <div class="flex flex-col items-center gap-[18px] text-center">
-      <span class="font-inter text-[13px] font-medium text-[#AEAEA6] tracking-[2px] max-[640px]:text-[11px] max-[640px]:tracking-[1.5px]">PERFIL</span>
+      <span class="hero-label font-inter text-[13px] font-medium text-[#AEAEA6] tracking-[2px] max-[640px]:text-[11px] max-[640px]:tracking-[1.5px]" style="opacity:0">PERFIL</span>
       <h1
         id="page-title"
         class="font-outfit text-[72px] font-light text-[#1A1A1A] tracking-[-3px] leading-tight max-[1024px]:text-[56px] max-[640px]:text-[44px] max-[640px]:tracking-[-1.6px]"
+        style="opacity:0"
       >
         Sobre mí
       </h1>
-      <p class="font-inter text-lg text-[#8A8A82] font-normal leading-[1.45] max-w-[900px] text-center max-[640px]:text-[15px] max-[640px]:max-w-[310px]">
+      <p class="hero-subtitle font-inter text-lg text-[#8A8A82] font-normal leading-[1.45] max-w-[900px] text-center max-[640px]:text-[15px] max-[640px]:max-w-[310px]" style="opacity:0">
         Diseño y desarrollo sitios web modernos, claros y rápidos.
       </p>
     </div>
   </section>
 
   <!-- ─── ABOUT MAIN ─── -->
-  <section class="bg-[#FAFAF9] max-w-[1440px] mx-auto px-[120px] max-[1024px]:px-6 max-[640px]:px-6 reveal">
+  <section class="bg-[#FAFAF9] max-w-[1440px] mx-auto px-[120px] pb-[72px] max-[1024px]:px-6 max-[640px]:px-6 max-[640px]:pb-10 reveal">
     <div class="flex items-center gap-10 max-[900px]:flex-col max-[900px]:gap-6">
       <!-- Portrait -->
       <div class="w-[500px] h-[500px] rounded-[20px] border border-[#E8E5E0] overflow-hidden shrink-0 max-[900px]:w-full max-[900px]:h-[300px] max-[640px]:w-[342px] max-[640px]:h-[300px] max-[640px]:mx-auto">
@@ -89,15 +81,10 @@ const timeline = [
           </p>
           <!-- Tags -->
           <div class="flex flex-wrap gap-[10px]">
-            {[
-              { icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg>, label: 'Full Stack' },
-              { icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>, label: 'UX / UI' },
-              { icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></svg>, label: 'Design Systems' },
-              { icon: <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>, label: 'Español / Inglés' },
-            ].map((t) => (
+            {aboutTags.map(({ Icon: TagIcon, label }) => (
               <span class="flex items-center gap-[6px] bg-[#F5F4F0] rounded-full px-3 py-[6px] font-inter text-[11px] font-semibold text-[#71716B] tracking-[0.3px]">
-                <span class="text-[#8A8A82]">{t.icon}</span>
-                {t.label}
+                <TagIcon size={13} color="#8A8A82" />
+                {label}
               </span>
             ))}
           </div>
@@ -110,10 +97,7 @@ const timeline = [
             class="flex items-center gap-[10px] bg-[#1A1A1A] text-[#FAFAF9] font-inter text-[15px] font-medium px-7 py-[14px] rounded-full hover:opacity-80 transition-opacity max-[640px]:w-full max-[640px]:justify-center"
           >
             Ver proyectos
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
+            <ArrowRight size={16} />
           </a>
           <a
             href="/contacto"
@@ -126,11 +110,7 @@ const timeline = [
             download
             class="flex items-center gap-2 font-inter text-[14px] font-medium text-[#71716B] hover:text-[#1A1A1A] transition-colors max-[640px]:w-full max-[640px]:justify-center"
           >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-              <polyline points="7 10 12 15 17 10"/>
-              <line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
+            <Download size={15} />
             Descargar CV
           </a>
         </div>
@@ -153,9 +133,7 @@ const timeline = [
           <div class="bg-[#F5F4F0] rounded-[16px] p-6 border border-[#E8E5E0] flex flex-col gap-[18px]">
             <div class="flex flex-col gap-3">
               <div class="w-[38px] h-[38px] bg-white border border-[#E8E5E0] rounded-[12px] flex items-center justify-center">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-                </svg>
+                <Code2 size={20} color="#1A1A1A" />
               </div>
               <span class="font-outfit text-[20px] font-semibold text-[#1A1A1A] tracking-[-0.3px]">Frontend</span>
               <p class="font-inter text-xs text-[#8A8A82] leading-[1.5]">Interfaces rápidas con arquitectura escalable.</p>
@@ -178,11 +156,7 @@ const timeline = [
           <div class="bg-[#F5F4F0] rounded-[16px] p-6 border border-[#E8E5E0] flex flex-col gap-[18px]">
             <div class="flex flex-col gap-3">
               <div class="w-[38px] h-[38px] bg-white border border-[#E8E5E0] rounded-[12px] flex items-center justify-center">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <ellipse cx="12" cy="5" rx="9" ry="3"/>
-                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
-                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
-                </svg>
+                <Database size={20} color="#1A1A1A" />
               </div>
               <span class="font-outfit text-[20px] font-semibold text-[#1A1A1A] tracking-[-0.3px]">Backend & Tools</span>
               <p class="font-inter text-xs text-[#8A8A82] leading-[1.5]">Servicios, datos y workflows para shipping continuo.</p>
@@ -205,12 +179,7 @@ const timeline = [
           <div class="bg-[#F5F4F0] rounded-[16px] p-6 border border-[#E8E5E0] flex flex-col gap-[18px]">
             <div class="flex flex-col gap-3">
               <div class="w-[38px] h-[38px] bg-white border border-[#E8E5E0] rounded-[12px] flex items-center justify-center">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 19l7-7 3 3-7 7-3-3z"/>
-                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
-                  <path d="M2 2l7.586 7.586"/>
-                  <circle cx="11" cy="11" r="2"/>
-                </svg>
+                <PenTool size={20} color="#1A1A1A" />
               </div>
               <span class="font-outfit text-[20px] font-semibold text-[#1A1A1A] tracking-[-0.3px]">Design</span>
               <p class="font-inter text-xs text-[#8A8A82] leading-[1.5]">Sistemas visuales prolijos y consistentes.</p>
@@ -262,12 +231,12 @@ const timeline = [
 
       <!-- Timeline content: desktop grid -->
       <div class="hidden md:grid grid-cols-5 gap-5">
-        {timeline.map((step) => (
+        {timeline.map(({ Icon: StepIcon, ...step }) => (
           <div class="flex flex-col gap-2">
             <span class="font-outfit text-base font-semibold text-[#1A1A1A] tracking-[-0.3px]">{step.title}</span>
             <p class="font-inter text-xs text-[#71716B] leading-[1.55]">{step.desc}</p>
             <span class="inline-flex items-center gap-[6px] bg-[#F5F4F0] rounded-full px-[10px] py-[5px] self-start font-inter text-[10px] font-semibold text-[#8A8A82] tracking-[0.3px]">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={step.icon} />
+              <StepIcon size={12} color="currentColor" />
               {step.tag}
             </span>
           </div>
@@ -276,7 +245,7 @@ const timeline = [
 
       <!-- Mobile timeline: stacked cards -->
       <div class="flex flex-col gap-3 md:hidden">
-        {timeline.map((step) => (
+        {timeline.map(({ Icon: StepIcon, ...step }) => (
           <div class="bg-[#F5F4F0] rounded-[14px] p-4 border border-[#E8E5E0] flex flex-col gap-[10px]">
             <div class="flex items-center gap-3">
               <span class="w-8 h-8 rounded-full bg-[#1A1A1A] flex items-center justify-center font-inter text-sm font-bold text-[#FAFAF9] shrink-0">
@@ -286,7 +255,7 @@ const timeline = [
             </div>
             <p class="font-inter text-xs text-[#71716B] leading-[1.55]">{step.desc}</p>
             <span class="inline-flex items-center gap-[6px] bg-white rounded-full px-[10px] py-[5px] self-start font-inter text-[10px] font-semibold text-[#8A8A82] tracking-[0.3px] border border-[#E8E5E0]">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={step.icon} />
+              <StepIcon size={12} color="currentColor" />
               {step.tag}
             </span>
           </div>
@@ -313,10 +282,7 @@ const timeline = [
         class="flex items-center gap-[10px] bg-[#FAFAF9] text-[#1A1A1A] font-inter text-[15px] font-medium px-7 py-[14px] rounded-full hover:opacity-80 transition-opacity shrink-0 max-[640px]:w-full max-[640px]:justify-center"
       >
         Contactame
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <line x1="5" y1="12" x2="19" y2="12"/>
-          <polyline points="12 5 19 12 12 19"/>
-        </svg>
+        <ArrowRight size={16} />
       </a>
     </div>
   </div></section>
@@ -330,11 +296,10 @@ const timeline = [
 
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.fromTo(
-    '#page-title',
-    { opacity: 0, y: 30 },
-    { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.3 }
-  );
+  // Hero stagger: label → title → subtitle
+  gsap.fromTo('.hero-label', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', delay: 0.2 });
+  gsap.fromTo('#page-title', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.38 });
+  gsap.fromTo('.hero-subtitle', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out', delay: 0.58 });
 
   // Animate timeline dots
   gsap.fromTo(
